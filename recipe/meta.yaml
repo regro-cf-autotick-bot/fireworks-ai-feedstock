@@ -1,5 +1,5 @@
 {% set name = "fireworks-ai" %}
-{% set version = "0.15.13" %}
+{% set version = "0.17.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fireworks_ai-{{ version }}.tar.gz
-  sha256: 659485e11d47398a4d98a9cbd8e3d6a14c1d4892768f67b7fa1cd6d101f9e62a
+  sha256: d3a06859051ef18a8ef6b431d633b9cd0a8817acfc7091562643397b9186a081
 
 build:
   noarch: python
@@ -21,6 +21,11 @@ requirements:
     - versioneer
     - pip
   run:
+    - asyncstdlib >=3.12.0
+    - betterproto-fw >=2.0.3
+    - mmh3 >=4.1.0
+    - openai
+    - typing_extensions
     - gitignore-parser
     - httpx-ws
     - openapi-spec-validator
